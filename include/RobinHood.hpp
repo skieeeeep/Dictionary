@@ -8,7 +8,7 @@
 #include <stdexcept>
 
 template <typename Key, typename Value>
-class RobinHoodTable {
+class RobinHood {
 private:
     struct Entry {
         Key key;
@@ -37,7 +37,7 @@ private:
     }
 
 public:
-    explicit RobinHoodTable(size_t initial_capacity = 16) {
+    explicit RobinHood(size_t initial_capacity = 16) {
         table.resize(initial_capacity);
     }
 
@@ -88,7 +88,7 @@ public:
     }
 
     const Value* find(const Key& key) const {
-        return const_cast<RobinHoodTable*>(this)->find(key);
+        return const_cast<RobinHood*>(this)->find(key);
     }
 
     bool erase(const Key& key) {
